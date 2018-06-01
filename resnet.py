@@ -214,7 +214,8 @@ class ResnetBuilder(object):
         block = pool1
         filters = 64
         for i, r in enumerate(repetitions):
-            block = _residual_block(block_fn, filters=filters, repetitions=r, is_first_layer=(i == 0))(block)
+            block = _residual_block(block_fn, filters=filters, repetitions=r,
+                                    is_first_layer=(i == 0))(block)
             filters *= 2
 
         # Last activation
